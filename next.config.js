@@ -16,6 +16,8 @@ module.exports = {
     return config
   },
 
+  assetPrefix: 'react-ssr-next',
+
   exportPathMap: () => ({
     '/': { page: '/' },
     '/produto/tratamento-completo': { page: '/produto', query: { id: 'tratamento-completo' } },
