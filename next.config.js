@@ -1,8 +1,14 @@
 const path = require('path')
 
+const BASE = '/react-ssr-next/';
+
 module.exports = {
+  assetPrefix: BASE,
+
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
+    
+    config.output.publicPath = `${BASE}${config.output.publicPath}`; // affects 'chunks'
 
     // Important: return the modified config
     // config.resolve.modules = [path.resolve(__dirname, "components"), "node_modules"]
@@ -16,12 +22,10 @@ module.exports = {
     return config
   },
 
-  assetPrefix: 'react-ssr-next',
-
   exportPathMap: () => ({
     '/': { page: '/' },
     '/produto/tratamento-completo': { page: '/produto', query: { id: 'tratamento-completo' } },
     '/produto/platinado-definitivo-hidratacao': { page: '/produto', query: { id: 'platinado-definitivo-hidratacao' } },
-    '/produto/fim-do-amarelado': { page: '/produto', query: { id: 'fim-do-amarelado' } }
-  })
+    '/produto/fim-do-amarelado': { page: '/produto', query: { id: 'fim-do-amarelado' } },
+  }),
 }
