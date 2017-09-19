@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "export": "next build && next export",
     "start": "NODE_PATH=. NODE_ENV=production node server.js",
     "lint": "standard 'api/*' 'components/*' 'layouts/*' 'pages/*' 'styles/*' 'routes.js' 'server.js'",
     "precommit": "lint-staged"
@@ -19,6 +20,7 @@
     "next": "^3.0.6",
     "next-routes": "^1.0.40",
     "react": "^15.6.1",
+    "react-addons-create-fragment": "^15.6.0",
     "react-dom": "^15.6.1",
     "standard": "^10.0.3",
     "styled-components": "^2.1.2"
@@ -33,6 +35,9 @@
     ]
   },
   "lint-staged": {
-    "*.js": ["standard --fix", "git add"]
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
   }
 }
