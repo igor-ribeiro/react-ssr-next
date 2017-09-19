@@ -3,12 +3,8 @@ const path = require('path')
 const BASE = '/react-ssr-next/';
 
 module.exports = {
-  assetPrefix: BASE,
-
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
-    
-    config.output.publicPath = `${BASE}${config.output.publicPath}`; // affects 'chunks'
 
     // Important: return the modified config
     // config.resolve.modules = [path.resolve(__dirname, "components"), "node_modules"]
