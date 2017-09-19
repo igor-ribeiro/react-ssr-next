@@ -1,6 +1,6 @@
 const path = require('path')
 
-const BASE = '/react-ssr-next/';
+const BASE = '/react-ssr-next/'
 
 module.exports = {
   webpack: (config, { dev }) => {
@@ -22,6 +22,6 @@ module.exports = {
     '/': { page: '/' },
     '/produto/tratamento-completo': { page: '/produto', query: { id: 'tratamento-completo' } },
     '/produto/platinado-definitivo-hidratacao': { page: '/produto', query: { id: 'platinado-definitivo-hidratacao' } },
-    '/produto/fim-do-amarelado': { page: '/produto', query: { id: 'fim-do-amarelado' } },
-  }),
+    '/produto/fim-do-amarelado': { page: '/produto', query: { id: 'fim-do-amarelado' } }
+  })
 }
